@@ -3,13 +3,13 @@ import fastify, {
   FastifyRequest,
   FastifyReply,
 } from "fastify";
-import fastifyCors from "fastify-cors";
+import cors from '@fastify/cors'
 import priceRouters from "./routers/price";
 
 const buildApp = (options: FastifyServerOptions) => {
   const app = fastify(options);
 
-  app.register(fastifyCors, {
+  app.register(cors, {
     origin: "*",
   });
 

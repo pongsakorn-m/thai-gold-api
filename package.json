@@ -12,6 +12,7 @@
   "author": "max180643 <max180643@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@fastify/cors": "^7.0.0",
     "cheerio": "^1.0.0-rc.10",
     "dotenv": "^10.0.0",
     "fastify": "^3.25.2",
