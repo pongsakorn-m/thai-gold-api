@@ -39,14 +39,19 @@ This API is based on HTTPS requests and JSON responses. `https://api.chnwt.dev/t
 
 ```json
 {
-  "status": "success",
-  "response": {
-    "date": "18 พฤษภาคม 2565",
-    "update_time": "เวลา 16:37 น.",
-    "price": {
-      "gold": { "buy": "30,300.00", "sell": "29,167.84" },
-      "gold_bar": { "buy": "29,800.00", "sell": "29,700.00" },
-      "change": { "compare_previous": "+50", "compare_yesterday": "-100" }
+  "status":"success",
+  "response":{
+    "update_date":"02/02/2569",
+    "update_time":"เวลา 17:23 น. (ครั้งที่ 69)",
+    "price":{
+      "gold":{
+        "buy":"69,523.76",
+        "sell":"71,950.00"
+      },
+      "gold_bar":{
+        "buy":"70,950.00",
+        "sell":"71,150.00"
+      }
     }
   }
 }
@@ -56,4 +61,4 @@ This API is based on HTTPS requests and JSON responses. `https://api.chnwt.dev/t
 
 ## Warning
 
-This API crawl data from ทองคําราคา.com and the API cannot handle URL in case of 404 yet
+This API crawl data from goldtraders.or.th and the API cannot handle URL in case of 404 yet

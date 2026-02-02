@@ -16,33 +16,24 @@ const priceHandler = async () => {
 
   const $ = cheerio.load(body);
 
-  const date = $(PRICE_CONFIG.SELECTOR.DATE).text().trim();
-  const updateTime = $(PRICE_CONFIG.SELECTOR.UPDATE_TIME).text().trim();
+  const dateTime = $(PRICE_CONFIG.SELECTOR.UPDATE_DATETIME).text().trim();
   const goldBuy = $(PRICE_CONFIG.SELECTOR.GOLD_BUY).text().trim();
   const goldSell = $(PRICE_CONFIG.SELECTOR.GOLD_SELL).text().trim();
   const goldBarBuy = $(PRICE_CONFIG.SELECTOR.GOLD_BAR_BUY).text().trim();
-  const goldSellBuy = $(PRICE_CONFIG.SELECTOR.GOLD_BAR_SELL).text().trim();
-  const priceComparePrevious = $(PRICE_CONFIG.SELECTOR.PRICE_COMPARE_PREVIOUS)
-    .text()
-    .trim();
-  const priceCompareYesterday = $(PRICE_CONFIG.SELECTOR.PRICE_COMPARE_YESTERDAY)
-    .text()
-    .trim()
-    .substring(7);
+  const goldBarSell = $(PRICE_CONFIG.SELECTOR.GOLD_BAR_SELL).text().trim();
 
-  const formatPriceComparePrevious =
-    priceComparePrevious.charAt(0) === "-"
-      ? priceComparePrevious
-      : `+${priceComparePrevious}`;
-  const formatPriceCompareYesterday =
-    priceCompareYesterday.charAt(0) === "-"
-      ? priceCompareYesterday
-      : `+${priceCompareYesterday}`;
+  let updateDate = dateTime;
+  let updateTime = dateTime;
+  if (dateTime.includes(" เวลา ")) {
+    const [d, t] = dateTime.split(" เวลา ");
+    updateDate = d.trim();
+    updateTime = "เวลา " + t.trim();
+  }
 
   return {
     status: "success",
     response: {
-      date,
+      update_date: updateDate,
       update_time: updateTime,
       price: {
         gold: {
@@ -51,11 +42,7 @@ const priceHandler = async () => {
         },
         gold_bar: {
           buy: goldBarBuy,
-          sell: goldSellBuy,
-        },
-        change: {
-          compare_previous: formatPriceComparePrevious,
-          compare_yesterday: formatPriceCompareYesterday,
+          sell: goldBarSell,
         },
       },
     },

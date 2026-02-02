@@ -1,21 +1,16 @@
 const PRICE_CONFIG = {
-  URL: "https://xn--42cah7d0cxcvbbb9x.com/",
+  URL: "https://classic.goldtraders.or.th/",
   SELECTOR: {
-    DATE: "#rightCol > div.divgta.goldshopf > table > tbody > tr:nth-child(4) > td.span.bg-span.txtd.al-r",
-    UPDATE_TIME:
-      "#rightCol > div.divgta.goldshopf > table > tbody > tr:nth-child(4) > td.em.bg-span.txtd.al-r",
+    UPDATE_DATETIME:
+      "#DetailPlace_uc_goldprices1_lblAsTime > b > font",
     GOLD_BUY:
-      "#rightCol > div.divgta.goldshopf > table > tbody > tr:nth-child(2) > td:nth-child(3)",
+      "#DetailPlace_uc_goldprices1_lblOMBuy > b > font",
     GOLD_SELL:
-      "#rightCol > div.divgta.goldshopf > table > tbody > tr:nth-child(2) > td:nth-child(2)",
+      "#DetailPlace_uc_goldprices1_lblOMSell > b > font",
     GOLD_BAR_BUY:
-      "#rightCol > div.divgta.goldshopf > table > tbody > tr:nth-child(1) > td:nth-child(3)",
+      "#DetailPlace_uc_goldprices1_lblBLBuy > b > font",
     GOLD_BAR_SELL:
-      "#rightCol > div.divgta.goldshopf > table > tbody > tr:nth-child(1) > td:nth-child(2)",
-    PRICE_COMPARE_PREVIOUS:
-      "#rightCol > div.divgta.goldshopf > table > tbody > tr:nth-child(3) > td.em.bg-em.al-l.g-u",
-    PRICE_COMPARE_YESTERDAY:
-      "#rightCol > div.divgta.goldshopf > table > tbody > tr:nth-child(3) > td.span.bg-span.g-u",
+      "#DetailPlace_uc_goldprices1_lblBLSell > b > font",
   },
 };
 
