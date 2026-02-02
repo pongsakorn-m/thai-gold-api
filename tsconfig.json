@@ -7,6 +7,7 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "lib": ["esnext", "dom"],
     "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*"]
