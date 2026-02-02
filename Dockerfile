@@ -2,13 +2,15 @@ FROM node:lts-alpine
 
 WORKDIR /usr/src/app
 
+RUN npm install -g pnpm
+
 COPY package.json .
-COPY yarn.lock .
-RUN yarn
+COPY pnpm-lock.yaml .
+RUN pnpm install --frozen-lockfile
 
 COPY . .
-RUN yarn build
+RUN pnpm build
 
 EXPOSE 3000
 
-CMD ["yarn", "start"]
+CMD ["pnpm", "start"]
