@@ -21,7 +21,7 @@ const buildApp = (options: FastifyServerOptions) => {
     });
   });
 
-  app.register(priceRouters, { prefix: "/" });
+  app.register(priceRouters, { prefix: "/api" });
 
   app.get("*", async (request: FastifyRequest, reply: FastifyReply) => {
     reply.code(404).send({
