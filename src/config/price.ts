@@ -1,5 +1,5 @@
 const PRICE_CONFIG = {
-  URL: "https://classic.goldtraders.or.th/",
+  URL: "https://classic.goldtraders.or.th/default.aspx",
   SELECTOR: {
     UPDATE_DATETIME:
       "#DetailPlace_uc_goldprices1_lblAsTime > b > font",
